@@ -1,49 +1,7 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import {
-  createLucideIcon,
-  Music2,
-  type LucideIcon,
-} from "lucide-react";
+import { AnimatePresence } from "motion/react";
 
 import { LoadingScreen } from "@/components/LoadingScreen";
-import { Button } from "@/components/ui/button";
-
-const Facebook = createLucideIcon("Facebook", [
-  [
-    "path",
-    {
-      d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
-      key: "facebook",
-    },
-  ],
-]);
-
-const Twitter = createLucideIcon("Twitter", [
-  ["path", { d: "M4 4h4.2L20 20h-4.2L4 4Z", key: "twitter-x-1" }],
-  ["path", { d: "M4 20 10.8 13.2", key: "twitter-x-2" }],
-  ["path", { d: "M13.2 10.8 20 4", key: "twitter-x-3" }],
-]);
-
-const Youtube = createLucideIcon("Youtube", [
-  [
-    "path",
-    {
-      d: "M22 8.5a3 3 0 0 0-2.1-2.1C18.2 6 12 6 12 6s-6.2 0-7.9.4A3 3 0 0 0 2 8.5a31 31 0 0 0 0 7 3 3 0 0 0 2.1 2.1C5.8 18 12 18 12 18s6.2 0 7.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 0-7Z",
-      key: "youtube-1",
-    },
-  ],
-  ["path", { d: "m10 15 5-3-5-3v6Z", key: "youtube-2" }],
-]);
-
-const Instagram = createLucideIcon("Instagram", [
-  [
-    "rect",
-    { width: "18", height: "18", x: "3", y: "3", rx: "5", key: "instagram-1" },
-  ],
-  ["circle", { cx: "12", cy: "12", r: "4", key: "instagram-2" }],
-  ["path", { d: "M17.5 6.5h.01", key: "instagram-3" }],
-]);
 
 const videoUrl =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4";
