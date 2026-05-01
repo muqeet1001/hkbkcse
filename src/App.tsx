@@ -371,7 +371,7 @@ type LandingPageProps = {
 function LandingPage({ onVideoReady }: LandingPageProps) {
   return (
     <main className="relative w-full overflow-x-hidden bg-background text-foreground selection:bg-white/20 selection:text-white">
-      <nav className="reference-bottom-nav" aria-label="Primary navigation">
+      <nav className="reference-bottom-nav hidden md:flex" aria-label="Primary navigation">
         {navLinks.map((link) => (
           <a
             key={link.label}
