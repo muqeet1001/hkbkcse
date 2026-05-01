@@ -57,12 +57,11 @@ function LandingPage({ onVideoReady }: LandingPageProps) {
       <section className="relative flex h-screen min-h-screen flex-col overflow-hidden">
         <video
           className="hero-background-video pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover"
-          src={videoUrl}
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           controls={false}
           controlsList="nodownload noplaybackrate noremoteplayback"
           disablePictureInPicture
@@ -73,14 +72,17 @@ function LandingPage({ onVideoReady }: LandingPageProps) {
           onContextMenu={(event) => event.preventDefault()}
           aria-hidden="true"
           tabIndex={-1}
-        />
+          crossOrigin="anonymous"
+        >
+          <source src={videoUrl} type="video/mp4" />
+        </video>
 
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-[60px] pb-32 pt-24 text-center">
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-[60px] pb-8 pt-12 text-center">
           <p className="animate-fade-rise mb-4 text-xs font-medium tracking-[0.2em] text-[var(--classic-champagne)] uppercase sm:text-sm">
             Department of Computer Science, HKBK College of Engineering
           </p>
           <h1
-            className="animate-fade-rise w-full max-w-5xl text-5xl font-normal leading-[1.05] tracking-tight sm:text-7xl md:text-8xl text-[var(--classic-ivory)]"
+            className="animate-fade-rise w-full max-w-5xl text-3xl font-normal leading-[1.05] tracking-tight sm:text-5xl md:text-6xl text-[var(--classic-ivory)]"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             Where <em className="not-italic text-[var(--classic-silver)]/50">Innovation</em> Meets{" "}
@@ -95,7 +97,7 @@ function LandingPage({ onVideoReady }: LandingPageProps) {
 
         </div>
 
-        <nav className="bottom-pill-nav liquid-glass fixed bottom-10 left-1/2 z-20 flex -translate-x-1/2 items-center justify-center gap-6 rounded-full bg-black/70 px-8 py-4 text-foreground shadow-[0_20px_50px_rgba(0,0,0,0.5)] w-max max-w-[90vw] border border-white/10">
+        <nav className="bottom-pill-nav liquid-glass fixed bottom-2 left-1/2 z-20 flex -translate-x-1/2 items-center justify-center gap-6 rounded-full bg-black/70 px-8 py-4 text-foreground shadow-[0_20px_50px_rgba(0,0,0,0.5)] w-max max-w-[90vw] border border-white/10">
           {navLinks.map((link) => (
             <a
               key={link}

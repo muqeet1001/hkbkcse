@@ -79,7 +79,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        Velorah
+        hkbkcse
       </motion.div>
 
       <div className="absolute inset-0 flex items-center justify-center">
