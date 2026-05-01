@@ -384,32 +384,32 @@ function LandingPage({ onVideoReady }: LandingPageProps) {
           <source src={videoUrl} type="video/mp4" />
         </video>
 
-        <div className="relative z-10 flex min-h-[100svh] w-full flex-1 flex-col items-center justify-center px-6 pb-36 pt-12 text-center sm:pb-40">
-          <p className="animate-fade-rise liquid-glass mb-8 inline-flex min-h-14 items-center rounded-full px-7 py-4 text-center text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--classic-champagne)] sm:min-h-16 sm:px-9 sm:text-xs">
+        <div className="relative z-10 flex min-h-[100svh] w-full flex-1 flex-col items-center justify-center px-6 pb-28 pt-10 text-center sm:pb-32">
+          <p className="animate-fade-rise liquid-glass mb-6 inline-flex min-h-12 max-w-[min(92vw,760px)] items-center justify-center rounded-full px-5 py-3 text-center text-[9px] font-medium uppercase tracking-[0.24em] text-[var(--classic-champagne)] sm:min-h-14 sm:px-7 sm:text-[11px] md:text-xs">
             HKBK College of Engineering &bull; Computer Science & Engineering
           </p>
 
           <h1
-            className="animate-fade-rise w-full max-w-7xl text-[clamp(4.6rem,16vw,14rem)] font-normal leading-[0.78] tracking-[-0.06em] text-[var(--classic-ivory)]"
+            className="animate-fade-rise w-full max-w-6xl text-[clamp(4rem,13vw,10.5rem)] font-normal leading-[0.82] tracking-[-0.055em] text-[var(--classic-ivory)]"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             HKBK <em className="not-italic text-[var(--classic-silver)]/48">CSE</em>
           </h1>
 
           <p
-            className="animate-fade-rise-delay mt-8 text-3xl font-normal leading-none tracking-tight text-[var(--classic-ivory)] sm:text-4xl md:text-5xl"
+            className="animate-fade-rise-delay mt-6 text-3xl font-normal leading-none tracking-tight text-[var(--classic-ivory)] sm:text-4xl md:text-[2.75rem]"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             Where Innovation Meets Technology
           </p>
 
-          <p className="animate-fade-rise-delay mt-6 max-w-2xl text-base leading-relaxed text-[var(--classic-silver)]/84 sm:text-lg">
+          <p className="animate-fade-rise-delay mt-5 max-w-2xl text-sm leading-relaxed text-[var(--classic-silver)]/84 sm:text-base">
             Empowering students to become innovators, problem solvers, and
             future tech leaders through practical learning, modern tools, and
             inspired engineering culture.
           </p>
 
-          <div className="animate-fade-rise-delay-2 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="animate-fade-rise-delay-2 mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="#about"
               className="liquid-glass inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-8 py-3 text-sm font-medium text-[var(--classic-ivory)] transition-transform duration-300 hover:scale-[1.03]"
