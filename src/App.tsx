@@ -5,13 +5,16 @@ import {
   BookOpen,
   Brain,
   Briefcase,
+  Camera,
   Code2,
   GraduationCap,
   Handshake,
   Lightbulb,
   Globe2,
   Laptop,
+  Mail,
   Monitor,
+  Play,
   Presentation,
   Rocket,
   Trophy,
@@ -24,6 +27,9 @@ import { LoadingScreen } from "@/components/LoadingScreen";
 
 const videoUrl =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4";
+
+const footerVideoUrl =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_114316_1c7889ad-2885-410e-b493-98119fee0ddb.mp4";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -293,6 +299,27 @@ const facilityCards: FacilityCard[] = [
       },
     ],
   },
+];
+
+const footerLinkGroups = [
+  {
+    title: "Explore",
+    links: ["Home", "About", "Highlights", "Facilities", "Innovation", "Events", "Contact"],
+  },
+  {
+    title: "Department",
+    links: ["About the Department", "Vision & Mission", "Faculty", "Infrastructure"],
+  },
+  {
+    title: "Gallery",
+    links: ["Student Life", "Events", "Projects", "Achievements"],
+  },
+];
+
+const footerSocialLinks = [
+  { label: "Instagram", icon: Camera },
+  { label: "LinkedIn", icon: Mail },
+  { label: "YouTube", icon: Play },
 ];
 
 function App() {
@@ -588,7 +615,121 @@ function LandingPage({ onVideoReady }: LandingPageProps) {
           </div>
         </div>
       </section>
+
+      <section
+        id="contact"
+        className="relative min-h-[115vh] overflow-hidden bg-[#050505] px-6 pb-36 sm:px-8 font-sans selection:bg-white/20 selection:text-white"
+      >
+        <video
+          className="absolute inset-0 z-[0] h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          controls={false}
+          controlsList="nodownload noplaybackrate noremoteplayback"
+          disablePictureInPicture
+          disableRemotePlayback
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source src={footerVideoUrl} type="video/mp4" />
+        </video>
+
+        <div className="relative z-10 mx-auto max-w-7xl pt-[500px]">
+          <SiteFooter />
+        </div>
+      </section>
     </main>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <motion.footer
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+      className="liquid-glass w-full rounded-3xl p-6 md:p-10 text-white/70 mt-32 md:mt-64"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-10">
+        <div className="md:col-span-4">
+          <div className="mb-6 flex items-center gap-3 text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+            >
+              <path d="M 4.688 136 C 68.373 136 120 187.627 120 251.312 C 120 252.883 119.967 254.445 119.905 256 L 0 256 L 0 136.096 C 1.555 136.034 3.117 136 4.688 136 Z M 251.312 136 C 252.883 136 254.445 136.034 256 136.096 L 256 256 L 136.095 256 C 136.032 254.438 136.001 252.875 136 251.312 C 136 187.627 187.627 136 251.312 136 Z M 119.905 0 C 119.967 1.555 120 3.117 120 4.688 C 120 68.373 68.373 120 4.687 120 C 3.117 120 1.555 119.967 0 119.905 L 0 0 Z M 256 119.905 C 254.445 119.967 252.883 120 251.312 120 C 187.627 120 136 68.373 136 4.687 C 136 3.117 136.033 1.555 136.095 0 L 256 0 Z" />
+            </svg>
+            <span className="text-xl font-medium">HKBK &bull; CSE</span>
+          </div>
+          <p className="mb-4 text-sm text-white/80">
+            Department of Computer Science & Engineering
+          </p>
+          <p className="text-sm leading-relaxed max-w-sm">
+            Empowering students to innovate, build, and lead in the world of
+            technology.
+          </p>
+        </div>
+
+        <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {footerLinkGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="text-sm uppercase tracking-wider text-white font-medium mb-4">
+                {group.title}
+              </h3>
+              <ul className="space-y-2 text-xs">
+                {group.links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="hover:text-white transition-colors">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div>
+            <h3 className="text-sm uppercase tracking-wider text-white font-medium mb-4">
+              Contact
+            </h3>
+            <ul className="space-y-2 text-xs">
+              <li>Email: yourcollege@email.com</li>
+              <li>Phone: +91 XXXXX XXXXX</li>
+              <li>Location: HKBK College, Bangalore</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
+        <p className="text-[10px] uppercase tracking-widest opacity-50">
+          &copy; 2026 HKBK College - Department of CSE. All rights reserved.
+        </p>
+        <div className="flex items-center gap-4">
+          <span className="text-[10px] uppercase tracking-widest opacity-50">
+            Follow:
+          </span>
+          <div className="flex items-center gap-3">
+            {footerSocialLinks.map(({ label, icon: Icon }) => (
+              <a
+                key={label}
+                href="#"
+                aria-label={label}
+                className="opacity-70 hover:opacity-100 transition-colors hover:text-white"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.footer>
   );
 }
 
